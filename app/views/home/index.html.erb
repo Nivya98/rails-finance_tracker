@@ -1,0 +1,16 @@
+<h1>Stock Status</h1>
+
+<%= form_with url: root_path, method: :get, local: true do |f| %>
+  <%= f.label :ticker, 'Enter a ticker symbol' %>
+  <%= f.text_field :ticker, placeholder: "Enter ticker symbol" %>
+  <%= f.submit 'Submit' %>
+<% end %>
+
+
+<% if @stock_data %>
+  <h2>Stock Data for <%= params[:ticker] %></h2>
+  <pre><%= @stock_data %></pre>
+
+<% elsif @message %>
+  <%= @message %>
+<% end %>

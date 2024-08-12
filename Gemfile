@@ -39,6 +39,15 @@ gem "jbuilder"
 # gem "bcrypt", "~> 3.1.7"
 gem "devise"
 gem 'devise-bootstrap-views', '~> 1.0'
+gem 'iex-ruby-client'
+#gem 'font-ruby-client'
+gem 'stock_quote', '~> 4.0'
+gem 'httparty'
+gem 'json'
+
+gem 'alphavantage'
+
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]

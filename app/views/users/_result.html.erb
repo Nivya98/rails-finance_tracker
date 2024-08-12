@@ -1,0 +1,13 @@
+<div class="results-block">
+  <%= render 'layouts/messages' %>
+</div>
+<% if @stock %>  
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= @stock.ticker %></h5>
+      <p class="card-text"><%= @stock.last_price %></p>
+    </div>
+  </div>
+<% else %>
+  <p>Stock not found. Please check the ticker symbol and try again.</p> 
+<% end %>

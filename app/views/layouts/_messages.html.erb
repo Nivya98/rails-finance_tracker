@@ -1,17 +1,17 @@
 
   <% if notice %>
-    
+    <div class='alert alert-success'>
       <p class="alert alert-success" class="notice"><%= notice %><button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
         </button>
       </p> 
-    
+    </div>
   <% end %>
   <% if alert %>
- 
+    <div class='alert alert-danger'>
       <p class="alert alert-danger"class="alert"><%= alert %><button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </p>
-   
+    </div>
   <% end %>  

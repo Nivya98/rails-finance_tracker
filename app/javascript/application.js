@@ -1,1 +1,8 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
+// app/javascript/application.js
+
+// Import jQuery, Popper.js, and Bootstrap
+import $ from 'jquery';
+import 'popper.js';
+import 'bootstrap';
+
+// Any additional custom JavaScript can go here

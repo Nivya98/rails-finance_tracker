@@ -33,4 +33,10 @@ class Stock < ApplicationRecord
       return nil
     end
   end
+
+  def self.check_db(ticker_symbol)
+    where(ticker: ticker_symbol ).first
+    # actually it is stocks.where(ticker:"GOOGL" ).first , bur since ot is a self method we are not specifyng the stock bcz im already inside the stock model 
+  end
+  # returns the stock object if it exist in the table 
 end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'my_portfolio',to: 'users#my_portfolio'
   #get 'search_stock_test', to: 'stock#search'
    get 'search_stocks', to: 'stocks#search'
+   get 'my_friends',to: 'users#my_friends'
   devise_for :users
   #root 'welcome#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

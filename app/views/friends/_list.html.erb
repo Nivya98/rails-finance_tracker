@@ -1,0 +1,20 @@
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th scope="col">First_name</th>
+      <th scope="col">Last_name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @friends.each do |user| %>
+      <tr>
+        <th scope="row"><%= user. first_name %></th>
+        <td><%= user.last_name %></td>
+         <td><%= user.email %></td>
+        <td><%= button_to 'Remove','#', method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-sm btn-warning' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -15,15 +15,23 @@ class User < ApplicationRecord
     stocks.where(id: stock.id).exists? 
     #since it is alredy a user model we dont need to use user.stocks.where(id: 3).exists?
   end
+
   # to display only 9 stocks for a user :- user: User.first,   user.stocks.count <10
   def user_stock_limit?
     stocks.count < 10
   end
+  
   def can_track_stock?(ticker_symbol)
     user_stock_limit? && !stock_already_tracked?(ticker_symbol)
   end
+  
   def full_name 
     return "#{first_name} #{last_name}" if first_name || last_name 
     "Anonymous"
   end
+
+  def self.matches(field_name, param)
+    where("#{field_name} like?", "%#{param}%")
+  end
+
 end 

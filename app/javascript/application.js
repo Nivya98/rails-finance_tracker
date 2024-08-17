@@ -6,3 +6,5 @@ import 'popper.js';
 import 'bootstrap';
 
 // Any additional custom JavaScript can go here
+import Rails from '@rails/ujs'
+Rails.start();

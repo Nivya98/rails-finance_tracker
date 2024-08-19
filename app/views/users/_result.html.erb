@@ -7,11 +7,12 @@
       <h5 class="card-title"><%= @stock.ticker %></h5>
       <p class="card-text"><%= @stock.last_price %></p>
       <% if current_user.can_track_stock?(@stock.ticker)%>
-        <%= button_to "Add to portfolio", user_stocks_path(user: current_user, ticker: @stock.ticker), class: 'btn btn-success' %>
+        <%= button_to "Add to portfolio", user_stocks_path(user: current_user, ticker: @stock.ticker),
+             class: 'btn btn-success' %>
       <% else %>
         <span class="badge badge-secondary">
           you are already tracking 
-          <% if !current_user.user_stock_limit? %>
+          <% if !current_user.under_stock_limit? %>
             10 stocks
           <% end %>
           <% if current_user.stock_already_tracked?(@stock.ticker) %>

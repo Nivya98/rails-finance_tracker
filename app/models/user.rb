@@ -17,12 +17,12 @@ class User < ApplicationRecord
   end
 
   # to display only 9 stocks for a user :- user: User.first,   user.stocks.count <10
-  def user_stock_limit?
+  def under_stock_limit?
     stocks.count < 10
   end
   
   def can_track_stock?(ticker_symbol)
-    user_stock_limit? && !stock_already_tracked?(ticker_symbol)
+    under_stock_limit? && !stock_already_tracked?(ticker_symbol)
   end
   
   def full_name 

@@ -7,11 +7,16 @@ class UsersController < ApplicationController
     @friends = current_user.friends
   end
 
+  def show
+    @user = User.find(params[:id])
+    @tracked_stocks = @user.stocks
+  end
+
   def search
     if params[:friend].present?
-      @friend = params[:friend]
-      if @friend
-        #render 'users/my_portfolio'
+      @friends = User.search(params[:friend])
+      @friends = current_user.exclude_current_user(@friends)
+      if @friends
         respond_to do |format|
           format.js { render partial: 'users/friend_result' }
         end     
